@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="count">COUNT</string>
+    <string name="phone_name">Samsung Galaxy S22 5G</string>
+    <string name="description">NETWORK	Technology
+    GSM / CDMA / HSPA / EVDO / LTE / 5G
+    LAUNCH	Announced	2022, February 09
+    Status	Available. Released 2022, February 25
+    BODY	Dimensions	146 x 70.6 x 7.6 mm (5.75 x 2.78 x 0.30 in)
+    </string>
+
 </resources>
