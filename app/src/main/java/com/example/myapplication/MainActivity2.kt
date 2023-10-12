@@ -11,47 +11,19 @@ class MainActivity2 : AppCompatActivity() {
     private val TAG = "MainActivityLifecycle"
 
     private lateinit var binding : ActivityMain2Binding
-    companion object {
-        const val EXTRA_NAME = "extra_name"
-        const val EXTRA_EMAIL = "extra_email"
-        const val EXTRA_PHONE = "extra_phone"
-        const val EXTRA_PASSWORD = "extra_password"
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val loginTextView = findViewById<TextView>(R.id.textView4)
-        loginTextView.setOnClickListener {
-            // Tambahkan aksi yang ingin Anda lakukan ketika teks "Log in" diklik di sini
-            // Contoh: Buka aktivitas login atau tampilkan pesan.
-            val intent = Intent(this@MainActivity2, ThirdActivity::class.java)
-            startActivity(intent)
+    with(binding) {
+        buttonToSecond.setOnClickListener {
+            val intentToSecondActivity =
+                Intent(this@MainActivity2, SecondActivity::class.java)
+            startActivity(intentToSecondActivity)
         }
-
-        with(binding) {
-            btnToSecond.setOnClickListener {
-                val intentToSecondActivity =
-                    Intent (this@MainActivity2, SecondActivity::class.java)
-
-                val name = username.text.toString()
-                val email = email.text.toString()
-                val phone = phone.text.toString()
-                val password = password.text.toString()
-
-                intentToSecondActivity.putExtra(EXTRA_NAME,name)
-                intentToSecondActivity.putExtra(EXTRA_EMAIL,email)
-                intentToSecondActivity.putExtra(EXTRA_PHONE,phone)
-                intentToSecondActivity.putExtra(EXTRA_PASSWORD,password)
-
-                startActivity(intentToSecondActivity)
-            }
-        }
-
-        Log.d(TAG, "oncCreate dipanggil")
     }
+    Log.d(TAG, "oncCreate dipanggil") }
 
     override fun onStart() {
         super.onStart()

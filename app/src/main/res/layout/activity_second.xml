@@ -1,73 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".SecondActivity"
-    android:padding="32dp">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView5"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:gravity="center"
-        android:text="Homepage"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="32dp" />
+        >
+        <TextView
+            android:id="@+id/text_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Tentukan Capaianmu !"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txt_username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
-        android:text="Welcome"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        tools:layout_editor_absoluteX="0dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="16dp"
+            android:layout_below="@id/text_welcome"
+            android:background="#8CC34B"
+            >
 
-    <TextView
-        android:id="@+id/txt_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Your has been activated"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/txt_username"
-        tools:layout_editor_absoluteX="16dp" />
+            <LinearLayout
+                android:id="@+id/linear_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                >
 
-    <TextView
-        android:id="@+id/txt_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Phone has been registered"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/txt_email"
-        tools:layout_editor_absoluteX="-16dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Isi Data"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"/>
 
-    <Button
-        android:id="@+id/btn_to_third"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="92dp"
-        android:text="TAP TO SECOND THIRD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="-30dp" />
+            </LinearLayout>
+            <EditText
+                android:id="@+id/input_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masukkan Nama"
+                android:layout_below="@+id/linear_1"
+                android:textColorHint="@color/black"
+                android:layout_marginTop="16dp"
+                android:padding="8dp"
+                android:background="@color/white"/>
+            <LinearLayout
+                android:id="@+id/layout_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_nama"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="Berat Badan Saat Ini"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:padding="8dp"
+                    android:background="@color/white"
+                    android:layout_weight="0.5"
+                    android:id="@+id/edt_berat_saatini"/>
 
-    <TextView
-        android:id="@+id/txt_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text=""
-        android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@+id/txt_phone"
-        tools:layout_editor_absoluteX="0dp" />
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="#ffffff"
+                    android:layout_marginStart="16dp"
+                    android:padding="8dp"
+                    android:layout_weight="1"
+                    android:id="@+id/spinner_satuan_berat_1"/>
+                />
+            </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:id="@+id/layout_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_1"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="Berat Badan Target"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:padding="8dp"
+                    android:background="@color/white"
+                    android:layout_weight="0.5"
+                    android:id="@+id/edt_berat_tujuan"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:textColor="#ffffff"
+                    android:layout_marginStart="16dp"
+                    android:padding="8dp"
+                    android:layout_weight="1"
+                    android:id="@+id/spinner_satuan_berat_2"/>
+                />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@+id/layout_2"
+                android:layout_marginTop="16dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tujuan"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/spinner_tujuan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linear_2"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:padding="8dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/linear_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@+id/spinner_tujuan"
+                android:layout_marginTop="16dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Capaian Tujuan"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/target_capaian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                android:layout_below="@+id/linear_3"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="16dp"
+                >
+
+                <CalendarView
+                    android:layout_width="286dp"
+                    android:layout_height="300dp"
+                    android:id="@+id/date_picker"
+                    app:cardElevation="8dp"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:id="@+id/kalori_harian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/target_capaian"
+                android:background="@color/white"
+                android:layout_marginTop="16dp"
+                android:padding="8dp"
+                android:hint="Target Kalori Harian"
+                android:inputType="number"
+                android:textColorHint="@color/black"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_to_third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:text="Mulai"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_below="@id/kalori_harian"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>

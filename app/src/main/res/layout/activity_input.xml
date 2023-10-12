@@ -6,4 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".InputActivity">
 
+    <EditText
+        android:id="@+id/editKaloriMasuk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="number"
+        android:background="@drawable/edit_button"
+        android:hint="Masukkan Kalori Masuk"
+        android:textColorHint="@color/black"
+        android:padding="8dp"/>
+
+    <EditText
+        android:id="@+id/editKaloriKeluar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editKaloriMasuk"
+        android:inputType="number"
+        android:background="@drawable/edit_button"
+        android:hint="Masukkan Kalori Keluar"
+        android:textColorHint="@color/black"
+        android:padding="8dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSimpan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="32dp"
+        android:background="#8CC34B"
+        android:text="Simpan"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/editKaloriKeluar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
